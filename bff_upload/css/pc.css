@@ -1,0 +1,621 @@
+::-webkit-scrollbar{
+    display: none;
+}
+/* @font-face {
+    font-family: 'PyeongChang';
+    src: url('../../info/txt/PyeongChangPeace-Bold.ttf') format('truetype');
+} */
+@font-face {
+    font-family: 'PyeongChang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+    /* font-weight: 700;
+    font-style: normal; */
+}
+@font-face {
+        font-family: 'PyeongChang2';
+        /* font-weight: 300;
+        font-style: normal; */
+        src: url('https://cdn.jsdelivr.net/gh/webfontworld/PyeongChang/PyeongChangPeace-Light.woff2');
+
+}
+.wrap_page{
+    width: 100%;
+    overflow: hidden;
+    background-image: url(../img/backgroundimg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y:-400px ;
+}
+.timer_page{
+    position: relative;
+    /*background-image: url(../img/person.png);
+    background-size: cover;*/
+    background-repeat: no-repeat;
+    background-color: #000066;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.timer_page_img{
+    position: absolute;
+    z-index: 21;
+}
+.bridge{
+    position: absolute;
+    background-image: url(../img/KakaoTalk_birdge.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}   
+#timer{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-weight: 900;
+    font-size: 3rem;
+    z-index: 19;
+    position: relative;
+}
+#timer span{
+    display: block;
+}
+.timer_txt{
+    font-weight: 100;
+    color: #FF6699;
+    font-size: 1em;
+}
+.timer_text_box{
+    position: absolute;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    z-index: 20;
+}
+.timer_text_box>li{
+    font-family: 'PyeongChang';
+}
+/* .timer_page_txt_warp_on{
+    position: sticky;
+} */
+/* .timer_text_box .in_timer_text{
+    font-family: 'PyeongChang2';
+} */
+.timer_but{
+    text-align: center;
+    position: absolute;
+    z-index: 30;
+    color: white;
+}
+.in_timer_text{
+    font-family: 'PyeongChang2';
+    /* display: block; */
+}
+@keyframes fire_ani{
+    0%{
+        transform: scale(0);
+        opacity: 1;
+    }
+    50%{
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0.1;
+    }
+}
+
+.fire{
+    position: absolute;
+    background-size: cover;
+    z-index: 22;
+    transform: scale(0);
+    animation: fire_ani 2s 4s linear infinite
+}
+.fire1{
+    background-image: url(../img/fire1.png);
+}
+.fire2{
+    background-image: url(../img/fire2.png);
+    animation-delay: 0.8s;
+}
+.fire3{
+    background-image: url(../img/fire3.png);
+}
+.fire4{
+    background-image: url(../img/fire1.png);
+    animation-delay: 0.4s;
+}
+.fire5{
+    background-image: url(../img/fire4.png);
+}
+.fire6{
+    background-image: url(../img/yfire2.png);
+    animation-delay: 0.6s;
+}
+.fire7{
+    background-image: url(../img/yfire4.png);
+    animation-delay: 1.2s;
+}
+.fire8{
+    background-image: url(../img/yfire6.png);
+    animation-delay: 1.5s;
+}
+.fire9{
+    background-image: url(../img/fire3.png);
+    animation-delay: 0.2s;
+}
+.fire10{
+    background-image: url(../img/yfire4.png);
+    animation-delay: 0.8s;
+}
+.fire11{
+    background-image: url(../img/fire4.png);
+    animation-delay: 0.1s;
+}
+.fire12{
+    background-image: url(../img/yfire3.png);
+    animation-delay: 0.7s;
+}
+.fire13{
+    background-image: url(../img/fire2.png);
+    animation-delay: 1.2s;
+}
+.fire14{
+    background-image: url(../img/fire5.png);
+    animation-delay: 0.5s;
+}
+.fire15{
+    background-image: url(../img/fire2.png);
+    animation-delay: 0.2s;
+}
+.fire16{
+    background-image: url(../img/yfire5.png);
+    animation-delay: 1.2s;
+}
+.timer_menu_wrap{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: #01012b; */
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    z-index: 9999;
+}
+.top_menu{
+    position: fixed;
+    background-color: #01012b;
+    color: white;
+    bottom: 0;
+    text-align: center;
+    cursor: pointer;
+    z-index: 9999;
+}
+.main_menu_on{
+    background-color: #000066;
+}
+.ham_menu{
+    position: fixed;
+    background-color: #000066;
+    display: none;
+    z-index: 9999;
+}
+.ham_menu div{
+    background-color: #ffffff;
+}
+.timer_menu_wrap_off{
+    display: none;
+}
+.ham_menu_on{
+    display: block;
+}
+.timer_menu_wrap_flex{
+    display: flex;
+}
+.ham_menu_off{
+    display: none;
+}
+.m_ham_menu_on{
+    display: block;
+}
+.m_timer_menu_wrap_off{
+    display: none;
+}
+/* 소개페이지 */
+.intro_tit{
+    color: black;
+    font-weight: 900;
+    text-align: right;
+}
+.in_tit_color{
+    color: #FF6699;
+}
+.intro_tit_box,.intro_txt_box{
+    position: absolute;
+    transform: translateX(250%);
+    transition-duration: 2s;
+}
+.intro_tit_box_left{
+    transform: translateX(0);
+}
+/* .intro_txt_box{
+    position: absolute;
+} */
+.intro_txt{
+    color: black;
+    text-align: right;
+}
+@keyframes circle_ani{
+    0%{
+        transform: scale(0);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1.5);
+        opacity: 0.1;
+    }
+}
+.circle2,.circle3,.circle4{
+    position: absolute;
+    background-size: cover;
+    z-index: 18;
+    transform: scale(0);
+    animation: circle_ani 3s 4s linear infinite;
+    border: 2px solid #a0a0a0;
+    border-radius: 100%;
+}
+.circle1{
+position: absolute;
+z-index: 17;
+background-color: #000066;
+}
+.circle3{
+    animation-delay: 0.5s;
+}
+.circle4{
+    animation-delay: 1s;
+}
+.map_out_box{
+    position: absolute;
+    z-index: 16;
+}
+.map_box{
+    position: absolute;
+    background-image: url(../img/map2.png);
+    background-size: cover;
+}
+.map_icon{
+    opacity: 0;
+    transition-duration: 8s;
+}
+.map_icon_on{
+    opacity: 1;
+}
+
+/* 인포페이지 */
+.info_box{
+    opacity: 1;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.info_box_light{
+    background-size: 120% 120%;
+}
+.info_box1{
+    background-image: url(../img/Ticket.jpg);
+}
+.info_box2{
+    background-image: url(../img/info_icon2.jpg);
+}
+.info_box3{
+    background-image: url(../img/Schedule.jpg);
+}
+.info_box4{
+    background-image: url(../img/Gallery1.jpg);
+}
+.info_black_box{
+    background-color: black;
+    position: absolute;
+    opacity: 0.5;
+}
+.info_black_box_off{
+    opacity: 0;
+}
+.info_sub_box{
+    height: 0;
+    background:white;
+    background-repeat: no-repeat;
+    z-index: 999;
+}
+.info_sub_box1 a{
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    color: white;
+}
+.info_sub_box{
+    overflow: scroll;
+}
+.info_gall_go{
+    display: block;
+}
+.sub_cancle{
+    background-image: url(../img/free-icon-close-button-1193-2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 4;
+    /* color: white; */
+    position: absolute;
+}
+.info_click,.info_tit,.info_txt{
+    position: absolute;
+    color: white;
+}
+.info_right_wrap{
+    text-align: right;
+    color: white;
+}
+.info_right_tit,.info_right_txt,.info_homepage{
+    transform: translateX(200%);
+    transition-duration: 2s;
+}
+.info_right_left{
+    transform: translateX(0);
+}
+.info_right_tit{
+    font-weight: 900;
+}
+.info_homepage{
+    border: 2px solid white;
+    text-align: center;
+    color: white;
+    font-weight: 900;
+}
+.info_homepage a{
+    color: white;
+}
+.info_sub_img1_on{
+    background-image: url(../img/info_ticket.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 150%;
+}
+.info_sub_img2{
+    margin: 0 auto;
+    background-image: url(../img/Comeload.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 80%;
+    height: 71%;
+}
+.info_sub_img2_2 iframe{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+.info_sub_img3_on{
+    background-image: url(../img/info_alltable.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+/* 안내사항페이지 */
+.warn_page{
+    position: relative;
+}
+.warn_tit{
+    text-align: center;
+    position: absolute;
+    font-weight: 900;
+    color: white;
+    text-shadow: 2px 2px 0 rgb(12, 12, 126);
+    transform: translateY(150%);
+    transition-duration: 2s;
+    opacity: 0;
+}
+.warn_tit_on{
+    transform: translateY(0);
+    opacity: 1;
+}
+.warn_tab_wrap{
+    position: absolute;
+    background-color: black;
+    overflow: hidden;
+    
+}
+.warn_tab_box{
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: scroll;
+}
+.tab_move_box{
+    position: absolute;
+}
+.warn_tab_box1{
+    background-image: url(../img/KakaoTalk_20231025_144928273_01.png);
+    
+}
+.warn_tab_box2{
+    background-image: url(../img/KakaoTalk_20231025_144928273.png);
+
+}
+.warn_tab_box3{
+    background-image: url(../img/KakaoTalk_20231025_215716368_06.png);
+}
+
+
+.warn_but_wrap{
+    position: absolute;
+    /* background-color: black; */
+    display: flex;
+    justify-content: space-around;
+}
+.warn_but{
+    border: 3px solid white;
+    color: white;
+    cursor: pointer;
+}
+.warn_but{
+    text-align: center;
+    box-shadow: 2px 2px 0 rgb(12, 12, 126);
+    text-shadow: 2px 0px 0px rgb(12, 12, 126);
+}
+/* 추천페이지 */
+.recomm_page{
+    position: relative;
+}
+.recomm_tit_box{
+    position: absolute;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 0 rgb(8, 8, 90);
+    font-weight: 900;
+    transform: translateY(150%);
+    transition-duration: 2s;
+    opacity: 0;
+}
+.recomm_tit_box_on{
+    transform: translateY(0);
+    opacity: 1;
+}
+.recomm_mask{
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+.recomm_move{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.recomm_box{
+    border: 1px solid white;
+}
+.recomm_box_img1{
+    background-image: url(../img/Gamchun1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.recomm_box_img2{
+    background-image: url(../img/GwangAn1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.recomm_box_img3{
+    background-image: url(../img/DaDaePo1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.recomm_box_img4{
+    background-image: url(../img/BusanAqua1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.recomm_box_img5{
+    background-image: url(../img/CableCar1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.recomm_box_img6{
+    background-image: url(../img/ORyuckDo1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.recomm_txt{
+    text-align: center;
+    color:white;
+    text-shadow: 2px 2px 0 #000066;
+}
+.recomm_box2{
+    background-color: green;
+    transform: scale(0.8);
+    position: relative;
+    transition-duration: 1s;
+}
+.recomm_txt2{
+    text-align: center;
+}
+.recomm_box2_on{
+    transform: scale(1.2);
+    z-index: 999; 
+    opacity: 1;
+    font-weight: 900;
+}
+.recomm_box2{
+    background-color: black;
+}
+.recomm_box2_img{
+    opacity: 0.5;
+    display: block;
+}
+.recomm_box2_img_on{
+    opacity: 1;
+}
+.arrow{
+    position: absolute;
+    cursor: pointer;
+    color: white;
+}
+.left_arrow1{
+    text-shadow:2px 2px 0 #000066;
+}
+.right_arrow1{
+    text-shadow:2px 2px 0 #000066;
+}
+.left_arrow2{
+    color: #000066;
+}
+.right_arrow2{
+    text-shadow: 2px 2px 0 #000066;
+}
+/* 공지사항페이지 */
+.notice_page{
+    position: relative;
+}
+.notice_tit{
+    position: absolute;
+    text-align: center;
+    font-weight: 900;
+}
+.notice_wrap{
+    position: absolute;
+}
+.notice_box{
+    box-sizing: border-box;
+    border-top: 1px solid rgb(37, 37, 131);
+    display: flex;
+    transition-duration: 1s;
+}
+.notice_box_on{
+    background-color: rgb(253, 203, 228);
+}
+.notice_box:last-child{
+    border-bottom: 1px solid rgb(37, 37, 131);
+}
+.notice_date{
+    display: flex;
+    flex-wrap: wrap;
+}
+.date,.year_month{
+    text-align: center;
+    display: block;
+}
+.notice_arrow,.notice_right{
+    display: block;
+    color:#0b0bb3
+}
+.notice_arrow{
+    text-align: center;
+}
+.notice_txt{
+    display: block;
+}
+.date{
+    color: #ff6699;
+}
